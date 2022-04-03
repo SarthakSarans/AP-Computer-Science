@@ -14,11 +14,11 @@ public class Card implements Comparable<Object>{
       rank = 0;
    }
 
-   public Card (String balls, String balls2, int balls3) {
+   public Card (String str, String str2, int num) {
    
-      name = balls;
-      suit = balls2;
-      rank = balls3;
+      name = str;
+      suit = st2;
+      rank = num;
       
    }
    
@@ -30,9 +30,9 @@ public class Card implements Comparable<Object>{
    }
    
    
-   public void setName(String balls)
+   public void setName(String str)
    {
-      name = balls;
+      name = str;
    }
    
    public String getSuit()
@@ -41,9 +41,9 @@ public class Card implements Comparable<Object>{
    
    }
  
-   public void setSuit(String balls)
+   public void setSuit(String str)
    {
-      suit = balls;
+      suit = str;
    }
    
    
@@ -52,16 +52,16 @@ public class Card implements Comparable<Object>{
       return rank;
    }
  
-   public void setRank(int balls)
+   public void setRank(int num)
    {
-      rank = balls;
+      rank = num;
    }
    
    
    public boolean equals (Object obj)
    {
-      Card balls = (Card) obj;
-      if (balls.getName().equals(name) && balls.getSuit().equals(suit) && balls.getRank() == rank)
+      Card cardObj = (Card) obj;
+      if (cardObj.getName().equals(name) && cardObj.getSuit().equals(suit) && cardObj.getRank() == rank)
          return true;
       else
          return false;
@@ -70,35 +70,35 @@ public class Card implements Comparable<Object>{
 
    public int compareTo(Object obj)
    {
-      Card balls = (Card) obj;
-      if (getSuit() == "clubs" && balls.getSuit() != "clubs")
+      Card cardObj = (Card) obj;
+      if (getSuit() == "clubs" && cardObj.getSuit() != "clubs")
          return 1;
       
-      else if (balls.getSuit() == "clubs" && getSuit() != "clubs")
+      else if (cardObj.getSuit() == "clubs" && getSuit() != "clubs")
          return -1;
       
-      else if (getSuit() == "spades" && balls.getSuit() != "spades")
+      else if (getSuit() == "spades" && cardObj.getSuit() != "spades")
          return 1;
       
-      else if (getSuit() != "spades" && balls.getSuit() == "spades")
+      else if (getSuit() != "spades" && cardObj.getSuit() == "spades")
          return -1;
       
       
-      else if (getSuit() == "hearts" && balls.getSuit() != "hearts")
+      else if (getSuit() == "hearts" && cardObj.getSuit() != "hearts")
          return 1;
-      else if (getSuit() != "hearts" && balls.getSuit() == "hearts")
+      else if (getSuit() != "hearts" && cardObj.getSuit() == "hearts")
          return -1;
       
-      else if (getSuit() == "diamonds" && balls.getSuit() != "diamonds")
+      else if (getSuit() == "diamonds" && cardObj.getSuit() != "diamonds")
          return -1;
       
-      else if (getSuit() != "diamonds" && balls.getSuit() == "diamonds")
+      else if (getSuit() != "diamonds" && cardObj.getSuit() == "diamonds")
          return 1;
       
       else{
-         if (getRank() < balls.getRank())
+         if (getRank() < cardObj.getRank())
             return -1;
-         else if( getRank() > balls.getRank())
+         else if( getRank() > cardObj.getRank())
             return 1;
          else 
             return 0;

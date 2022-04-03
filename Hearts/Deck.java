@@ -22,10 +22,10 @@ public class Deck{
    
    }
    
-   public void setDeck(ArrayList<Card> balls)
+   public void setDeck(ArrayList<Card> cards)
    {
    
-      deck = balls;
+      deck = cards;
    
    }
    public void initializeDeck()
@@ -44,9 +44,9 @@ public class Deck{
       }
    }
    
-   public Card getCard(int balls)
+   public Card getCard(int num)
    {
-      return deck.get(balls);
+      return deck.get(num);
    
    }
 
@@ -60,18 +60,18 @@ public class Deck{
 
    public void shuffle2()
    {
-      int balls = (int) (Math.random()*(10-2)) + 2;
-      ArrayList<Card> balls2 = new ArrayList<Card>();
+      int num = (int) (Math.random()*(10-2)) + 2;
+      ArrayList<Card> cards = new ArrayList<Card>();
       
-      for(int i=0; i < balls; i++)
+      for(int i=0; i < num; i++)
       {
-         balls2.add(deck.get(0));
+         cards.add(deck.get(0));
          deck.remove(0);
       
       }
       
-      int balls3 = (int) (Math.random() * (  (52 - balls)) +1) ;
-      deck.addAll(balls3, balls2);
+      int num2 = (int) (Math.random() * (  (52 - num)) +1) ;
+      deck.addAll(num2, cards);
       
       
       
@@ -88,10 +88,10 @@ public class Deck{
    {
       if (!deck.isEmpty())
       {
-         String balls = deck.toString();
-         String balls2 = balls.replaceAll("\\[|\\]|\"","");
-         balls2 = balls2.replaceAll(", ","");
-         return balls2;
+         String str = deck.toString();
+         String str2 = str.replaceAll("\\[|\\]|\"","");
+         str2 = str2.replaceAll(", ","");
+         return str2;
       }
       else
       {
